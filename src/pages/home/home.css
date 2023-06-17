@@ -3,3 +3,53 @@
     flex-direction: column;
     display: flex;
 }
+
+.headcontent{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftcontent{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightcontent{
+    width: 70%;
+}
+
+
+.home1{
+    height: 60%;
+}
+
+.home2{
+    height: 90%;
+}
+
+.leftcontent h2{
+    margin: 0px;
+    margin-left: 20px;
+    font-family: 'Belgrano';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color: #000000;
+    word-wrap: break-word;
+}
+
+.leftcontent p1{
+    margin-left: 20px;
+    font-family: 'Belgrano';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #11423F;
+    word-wrap: break-word;
+}
+
+.crypto{
+    color: #641B1B;
+}

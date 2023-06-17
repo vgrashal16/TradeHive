@@ -1,12 +1,11 @@
 .footer{
     width: 100%;
-    height: 50px;
     background: #11423F;
     text-align: center;
+    margin-top: auto;
 }
 
 .footer p{
-    padding: 15px;
     font-family: 'Belgrano';
     font-style: normal;
     font-weight: 400;

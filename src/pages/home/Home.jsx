@@ -6,12 +6,8 @@ function Home(){
     return(
         <>
         <div className="home">
-            <div className="posi_header">
-                <Header/>
-            </div>
-            <div className="posi_footer">
-                <Footer/>
-            </div>
+            <Header/>
+            <Footer/>
 
         </div>
         </>

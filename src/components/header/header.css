@@ -1,0 +1,13 @@
+.header{
+    width: 100%;
+    
+    background: #11423F;
+}
+
+.header p{
+    font-family: 'Belgrano';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+}

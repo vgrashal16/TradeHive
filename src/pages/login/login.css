@@ -1,0 +1,20 @@
+.login{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.leftcontent{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    width: 65%;
+    height: 100%;
+}
+
+.rightcontent{
+    display: flex;
+    float: right;
+    width: 35%;
+    height: 100%;
+}

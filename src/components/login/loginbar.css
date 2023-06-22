@@ -1,0 +1,16 @@
+.loginbar{
+    background-color: #11423F;
+    height: 100%;
+    width: 100%;
+
+}
+
+#email{
+    background-color:azure;
+    border-radius: 12%;
+    border: 0px;
+    height: 10%;
+    width: 60%;
+    padding: 0px;
+
+}

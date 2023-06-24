@@ -8,7 +8,7 @@ function Login(){
     <div className="login">
         <div className="leftcontent">
             <h1>TradeHive</h1>
-            <p>Welcome to TradeHive<br/> Login to access your portfolio and start trading!</p>
+            <p>Welcome to <span className="head2">TradeHive</span><br/> Login to access your portfolio and start trading!</p>
             <img src= {graph} alt="Graph"/>
         </div>
         <div className="rightcontent">

@@ -38,11 +38,15 @@
     cursor: pointer;
 }   
 
-.loginbar p1{
+.loginbar p{
     color: #ABE298;
     font-size: 1vw;
 }
 
 .signup{
     color: azure;
+}
+
+.head2{
+    font-size: 35px;
 }

@@ -25,7 +25,7 @@ function Loginbar(){
                 <input type="text" placeholder="Enter Email " name="email" value={user.email} onChange={handleChange}></input> 
                 <input type="text" placeholder="Enter Password " name="password" value={user.password} onChange={handleChange}></input> 
                 <button>Login</button>
-                <p1>Don't have an account? <span className="signup">Sign Up</span></p1>
+                <p>Don't have an account? <span className="signup">Sign Up</span></p>
             </div>
         </>
     );

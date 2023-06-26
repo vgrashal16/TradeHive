@@ -1,4 +1,4 @@
-.registerbar{
+.regverify{
     display: flex;
     flex-direction: column;
     background-color: #000000;
@@ -6,13 +6,12 @@
     width: 100%;
 }
 
-.headline{
-    display: flex;
-    flex-direction: row;
+.regheader{
+    width: 100%;
     height: 20%;
 }
 
-.headline > img{
+.regheader > img{
     height: 56%;
     width: 30%;
     margin-left: 7%;
@@ -20,70 +19,40 @@
 }
 
 
-.form{
+.otp{
     width: 100%;
-    height: 75%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.otp p{
+    color: #ffffff;
+}
 
-
-.form > input{
+.otp > input{
     background-color: #ffffff;
     border: 0px;
     outline: none;
     text-align: center;
     margin: 2%;
-    width: 40%;
-    height: 14%;
+    width: 32%;
+    height: 10%;
     border-radius: 30px;
     box-shadow: 0px 1px 5px rgb(0, 0, 0);
 }
 
-.form > button{
+.otp > button{
     background-color: #ABE298;
     border: 0px;
     outline: none;
     text-align: center;
     margin: 2%;
-    width: 40%;
-    height: 14%;
+    width: 33%;
+    height: 10%;
     font-size: 90%;
     border-radius: 30px;
     box-shadow: 0px 1px 5px rgb(0, 0, 0);
     cursor: pointer;
 }
-
-.otp > lottie-player{
-    width: 30%;
-    height: 30%;
-    background-color: white;
-}
-.form p{
-    color: #ffffff;
-    margin: 0px;
-    margin-bottom: 2%;
-}
-
-.form > p2{
-    color: #ABE298;
-    font-size: 1vw;
-    padding: 0;
-    margin: 0;
-}
-
-
-.login  {
-    color: #ffffff;
-    display: inline;
-}
-          
-  
-  
-  
-  
-  
-  
-  

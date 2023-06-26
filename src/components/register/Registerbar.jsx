@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import "./registerbar.css"
 import {useState} from 'react';
-import avatar from "../../../svgs/avatar.svg";
+import logo_white from "../../../svgs/logo_white.svg"
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function Registerbar() {
 
     const [ user, setUser]=useState({
         fname:"",
-        email:"",
-        verify:"",
+        email:"",    
         password:"",
         cnfpassword:""
     })
@@ -25,42 +27,99 @@ function Registerbar() {
         })
     }
 
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    const register = () =>{
+        const {fname, email, password, cnfpassword} = user
+        if(fname && email && password && cnfpassword){
+            if(email.match(validRegex)){
+                if(password == cnfpassword){
+                    
+                    axios.post("http://localhost:8000/register", user)
+                    .then ((res)=>{if (res.data == "False"){
+                        toast.error("User already registered", {
+                            position: "bottom-center",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: false,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            });
+                    }
+                })}
+                else{
+                    toast.error("Passwords do not match", {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                }
+            }
+            else{
+                toast.error("Email Address should be of form \'someone@example.com\'", {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            }
+        }
+        else{
+            toast.error("Please input all fields!", {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        }
+    }
 
 
   return (
     <>
+        <ToastContainer
+            position="bottom-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover={false}
+            theme="light"
+        />
       <div className="registerbar">
-        <h1>TradeHive</h1>
         <div className="headline">
-            <img src= {avatar} alt="Avatar"/>
-            <p>Welcome to <span className="head2">TradeHive</span><br/>Sign Up today to start trading!</p>
+            <img src= {logo_white} alt="logo"/>
+            
         </div>
 
         <div className="form">
-            <div className="verify">
-                <div className="left">
-                    <input type="text" placeholder="Full Name" name="fname" value={user.fname} onChange={handleChange}></input>
-                </div>
-                <div className="right">
-                    <div className="topverify">
-                        <input type="email" placeholder="Email Address" name="email" value={user.email} onChange={handleChange}></input>    
-                        <button type="button">Send</button>                  
-                    </div>
-                    <div className="bottomverify">
-                        <input type="text" placeholder="Verify Code" name="verify" value={user.verify} onChange={handleChange}></input>
-                        <button type="button">Verify</button> 
-                    </div>
-                </div>
-            </div>
-
-            <div className="submit">
-                <input type="text" placeholder="Password" name="password" value={user.password} onChange={handleChange}></input> 
-                <input type="text" placeholder="Confirm Password" name="cnfpassword" value={user.cnfpassword} onChange={handleChange}></input> 
-                <button>Register</button>
-                <p>Already have an account? <span className="login">Login</span></p>
-            </div>
+            <p>Register below to start trading!</p>
+            <input type="text" placeholder="Full Name" name="fname" value={user.fname} onChange={handleChange}></input>
+            <input typpe="text" placeholder="Email Address" name="email" value={user.email} onChange={handleChange}></input>
+            <input type="text" placeholder="Password" name="password" value={user.password} onChange={handleChange}></input> 
+            <input type="text" placeholder="Confirm Password" name="cnfpassword" value={user.cnfpassword} onChange={handleChange}></input> 
+            <button onClick={register}>Register</button>
+            <p2>Already have an account? <span className="login">Login</span></p2>       
         </div>
-      </div>
+        </div>
     </>
   )
 }
